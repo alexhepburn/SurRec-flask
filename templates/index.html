@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Recommend a Song</title>
+</head>
+<body>
+  <form id="form" action="/index" method="post" enctype="multipart/form-data">
+    {% for song in songs %}
+    <div>
+        <input type="checkbox" name="songselect" id="{{song}}" value="{{song}}" unchecked>
+        <label for="{{song}}">{{song}}</label>
+    </div>
+    {% endfor %}
+    <input type="submit" value="Submit">
+  </form>
+  <iframe src="https://www.youtube.com/embed/{{youtube_id}}" width="853" height="480" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>
